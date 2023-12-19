@@ -1,0 +1,26 @@
+{
+    "jpsType": "install",
+    "name": "dockerfile-auto-deploy",
+    "id": "dockerfile-auto-deploy",
+    "version": "1.0",
+    "baseUrl": "https://github.com/yohrannes/vap-auto-deploy-dockerfile.git",
+    "homepage": "https://github.com/yohrannes/vap-auto-deploy-dockerfile.git",
+    "description": {
+        "text": "/text/description.md"
+        },
+    "nodes": {
+        "fixedCloudlets": "1",
+        "flexibleCloudlets": "20",
+        "image": "yohrannes/lenda:latest",
+        "nodeGroup": "docker",
+        "extipv6": "1",
+        "isSLBAccessEnabled": "false",
+        "diskLimit": "20G"
+        },
+
+    "skipNodeEmails": "true",
+
+    "onInstall": {
+        "cmd[docker]": "chmod a+x /root/scripts/*"
+    }
+}
